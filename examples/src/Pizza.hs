@@ -69,7 +69,6 @@ helloMain = do
   name <- getLine
   let statement = helloPerson name
   putStrLn statement
-
-helloMaybeMain :: IO ()
-helloMaybeMain = do
-  name
+-- helloMaybeMain :: IO ()
+-- helloMaybeMain = do
+--   name

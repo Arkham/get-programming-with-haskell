@@ -1,5 +1,0 @@
-resolver: lts-14.7
-packages:
-  - examples
-extra-deps:
-  - random-1.1
