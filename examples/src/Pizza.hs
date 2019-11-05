@@ -1,18 +1,24 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Pizza where
 
 import qualified Data.Map as Map
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
 
 type Pizza = (Double, Double)
 
 areaGivenDiameter :: Double -> Double
-areaGivenDiameter d = pi * (d / 2) ^ 2
+areaGivenDiameter d = radius * radius * pi
+  where
+    radius = d / 2
 
 costPerInch :: Pizza -> Double
 costPerInch (size, cost) = cost / areaGivenDiameter size
 
 cheaperPizza :: Pizza -> Pizza -> Pizza
 cheaperPizza p1 p2 =
-  if costP1 < costP1
+  if costP1 < costP2
     then p1
     else p2
   where
@@ -69,6 +75,14 @@ helloMain = do
   name <- getLine
   let statement = helloPerson name
   putStrLn statement
--- helloMaybeMain :: IO ()
--- helloMaybeMain = do
---   name
+
+-- Exercise with Data.Text
+helloPersonT :: T.Text -> T.Text
+helloPersonT name = "Hello " <> name <> "!"
+
+helloMainT :: IO ()
+helloMainT = do
+  TIO.putStrLn "Hello! What's your name?"
+  name <- TIO.getLine
+  let statement = helloPersonT name
+  TIO.putStrLn statement
