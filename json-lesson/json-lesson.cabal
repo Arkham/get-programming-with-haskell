@@ -1,0 +1,72 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7b363a6f6f70c514ba26c47a2c7c24f474094cc161e72a450d2a30c3a6633b4d
+
+name:           json-lesson
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/json-lesson#readme>
+homepage:       https://github.com/githubuser/json-lesson#readme
+bug-reports:    https://github.com/githubuser/json-lesson/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/json-lesson
+
+library
+  other-modules:
+      Paths_json_lesson
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings DeriveGeneric
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , text
+  default-language: Haskell2010
+
+executable json-lesson-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_json_lesson
+  hs-source-dirs:
+      app
+  default-extensions: OverloadedStrings DeriveGeneric
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , json-lesson
+    , text
+  default-language: Haskell2010
+
+test-suite json-lesson-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_json_lesson
+  hs-source-dirs:
+      test
+  default-extensions: OverloadedStrings DeriveGeneric
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , json-lesson
+    , text
+  default-language: Haskell2010
